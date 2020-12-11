@@ -58,22 +58,38 @@ var server=http.createServer(function(req,res){
    // Synchronization way file write end ###########
 
    // rename file ######################## Ayschronization way start
-    fs.rename('demo.txt','demoNew.txt',function(error){
+    // fs.rename('demo.txt','demoNew.txt',function(error){
 
-        if(error){
-                 res.writeHead(200,{'Content-Type':'text/html'});
-                 res.write('File Rename Fail');
-                 res.end();
-        }
-        else{
-                res.writeHead(200,{'Content-Type':'text/html'});
-                res.write('File Rename Success')
-                res.end();
-            }
+    //     if(error){
+    //              res.writeHead(200,{'Content-Type':'text/html'});
+    //              res.write('File Rename Fail');
+    //              res.end();
+    //     }
+    //     else{
+    //             res.writeHead(200,{'Content-Type':'text/html'});
+    //             res.write('File Rename Success')
+    //             res.end();
+    //         }
 
-    })
+    // })
    //######################## Ayschronization way end
 
+   // Synchronization way file rename end ###########
+    let error=fs.renameSync('test.txt','demo.txt');
+     if(error){
+         res.writeHead(200,{'Content-Type':'text/html'});
+         res.write('File rename fail');
+         res.end();
+     }
+     else{
+         res.writeHead(200,{'Content-Type':'text/html'});
+         res.write('File rename success');
+         res.end();
+     }
+   // Synchronization way file rename end ###########
+
+
+  
 }
 });
 
