@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html Lang="en">
+
+<head>
+    <meta chatset="UTF-8">
+    </meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </meta>
+    <title>News about Technology</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">Technology News</div>
+        <div class="header__search">
+            <form action="/" method="POST">
+                <input type="text" name="search" placeholder="Search for news" required>
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="news-single">
+            <a href="/">&larr;- Back</a>
+            <h2>
+                <%- article.title.rendered %>
+            </h2>
+            <p>
+                <%- article.content.rendered %>
+            </p>
+
+
+        </div>
+</body>
+
+</html>
